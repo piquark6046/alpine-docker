@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # packages lists
-AptPackages=("wget" "nodejs" "npm" "git" "nano" "curl" "tar" "jq" "grep" "vim" "sudo" "7zip" "uname" "cifs-utils" "samba" "python3" "python3-venv")
+AptPackages=("wget" "nodejs" "npm" "git" "nano" "curl" "tar" "jq" "grep" "vim" "sudo" "bash-completion" "7zip" "uname" "cifs-utils" "samba" "python3" "python3-venv")
 
 # Install APT packages
 apt update
@@ -12,6 +12,8 @@ for i in "${AptPackages[@]}"
 do
   apt install -y "$i"
 done
+
+yes | unminimize
 
 npm i -g n
 n lts
