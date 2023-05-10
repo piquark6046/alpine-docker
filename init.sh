@@ -15,6 +15,8 @@ done
 
 yes | unminimize
 
+curl --proto '=https' --tlsv1.3  https://sh.rustup.rs -sSf | sh -s -- -y
+
 npm i -g n
 n lts
 npm update -g npm
