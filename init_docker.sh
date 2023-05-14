@@ -2,4 +2,5 @@
 npm config set prefix /usr/local
 
 # Install wasm-pack
-curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+curl --proto '=https' --tlsv1.3  https://sh.rustup.rs -sSf | sh -s -- -y
+cargo install wasm-pack

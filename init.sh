@@ -20,8 +20,6 @@ n lts
 npm update -g npm
 npm i -g yarn
 
-curl --proto '=https' --tlsv1.3  https://sh.rustup.rs -sSf | sh -s -- -y
-
 # npm packages
 NpmPackages=("ts-node" "tslib" "typescript")
 
