@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # packages lists
-AptPackages=("wget" "nodejs" "npm" "git" "nano" "curl" "tar" "jq" "grep" "vim" "sudo" "bash-completion" "7zip" "uname" "cifs-utils" "samba" "python3" "python3-venv")
+AptPackages=("wget" "nodejs" "npm" "git" "nano" "curl" "tar" "jq" "grep" "vim" "sudo" "bash-completion" "7zip" "uname")
 
 # Install APT packages
 apt update
@@ -15,11 +15,10 @@ done
 
 yes | unminimize
 
-curl --proto '=https' --tlsv1.3  https://sh.rustup.rs -sSf | sh -s -- -y
-
 npm i -g n
 n lts
 npm update -g npm
+npm i -g yarn
 
 # npm packages
 NpmPackages=("ts-node" "tslib" "typescript")
