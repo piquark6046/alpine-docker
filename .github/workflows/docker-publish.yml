@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '00 0 27 * *'
   push:
-    branches: [ "main" ]
+    branches: [ "latest" ]
 
 env:
   REGISTRY: ghcr.io
@@ -32,7 +32,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.REGISTRY }}
-          default_branch: ${{ github.ref_name }}
+          tag_names: true
           buildoptions: "--compress"
           platforms: linux/amd64,linux/arm64
           snapshot: true
