@@ -19,8 +19,6 @@ USER docker
 USER root
 COPY init_gitcache.sh /home/docker/init_gitcache.sh
 RUN chown docker /home/docker/init_gitcache.sh
-RUN mkdir /gitcache
-RUN chown docker /gitcache
 USER docker
 RUN chmod +x /home/docker/init_gitcache.sh && bash /home/docker/init_gitcache.sh
 RUN rm /home/docker/init_gitcache.sh
