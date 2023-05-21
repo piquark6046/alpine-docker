@@ -4,7 +4,7 @@ curl --proto '=https' --tlsv1.3  https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Clone Git repo
 sudo mkdir /gitcache
-sudo chown dockeer /gitcache
+sudo chown docker /gitcache
 cd /gitcache
 RepoName=("AdguardFilters" "List-KR" "easylist" "easylistgermany" "listefr" "easylistdutch" "easylistchina")
 RepoURL=("https://github.com/AdguardTeam/AdguardFilters" "https://github.com/List-KR/List-KR" "https://github.com/easylist/easylist" "https://github.com/easylist/easylistgermany" "https://github.com/easylist/listefr" "https://github.com/easylist/easylistdutch" "https://github.com/easylist/easylistchina")
