@@ -20,6 +20,10 @@ jobs:
       packages: write
       id-token: write
 
+    strategy:
+      matrix:
+      channel: ["lts", "latest"]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -32,7 +36,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.REGISTRY }}
-          tag_names: true
+          dockerfile: ${{ matrix.channel }}
+          tags: ${{ matrix.channel }}
           buildoptions: "--compress"
           platforms: linux/amd64,linux/arm64
           snapshot: true
