@@ -1,4 +1,4 @@
-ARG  UBUNTU_VERSION=rolling
+ARG  UBUNTU_VERSION=latest
 FROM ubuntu:${UBUNTU_VERSION}
 
 USER root
