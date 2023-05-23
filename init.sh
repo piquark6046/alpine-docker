@@ -22,6 +22,8 @@ echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/deb
 sudo apt update && sudo apt install yarn
 npm update -g npm
 
+wget -qO https://dot.net/v1/dotnet-install.sh | bash
+
 # npm packages
 NpmPackages=("ts-node" "tslib" "typescript")
 
