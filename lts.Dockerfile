@@ -10,15 +10,15 @@ RUN chmod +x /init.sh && bash /init.sh
 RUN rm /init.sh
 
 # Create account and switch
-RUN adduser --disabled-password --gecos '' docker
-RUN adduser docker sudo
+RUN adduser --disabled-password --gecos '' container
+RUN adduser container sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-USER docker
+USER container
 
 # Install packages with rootless
 USER root
-COPY init_docker.sh /home/docker/init_docker.sh
-RUN chown docker /home/docker/init_docker.sh
-USER docker
-RUN chmod +x /home/docker/init_docker.sh && bash /home/docker/init_docker.sh
-RUN rm /home/docker/init_docker.sh
+COPY init_container.sh /home/container/init_container.sh
+RUN chown container /home/container/init_container.sh
+USER container
+RUN chmod +x /home/container/init_container.sh && bash /home/container/init_container.sh
+RUN rm /home/container/init_container.sh

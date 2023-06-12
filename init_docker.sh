@@ -8,5 +8,5 @@ git config --global pack.packSizeLimit 128m
 
 # Install docker rootless
 dockerd-rootless-setuptool.sh install
-echo 'export PATH=/usr/bin:$PATH' > /home/docker/.bashrc
-echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' > /home/docker/.bashrc
+echo 'export PATH=/usr/bin:$PATH' > /home/container/.bashrc
+echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' > /home/container/.bashrc
