@@ -23,4 +23,4 @@ USER container
 RUN chmod +x /home/container/init_container.sh && bash /home/container/init_container.sh
 RUN rm /home/container/init_container.sh
 RUN cd /home/container && git clone https://github.com/AdguardTeam/FiltersRegistry
-RUN cd FiltersRegistry && git maintenance run --task=commit-graph --task=prefetch --task=loose-objects --task=incremental-repack --task=pack-refs
+RUN cd /home/container/FiltersRegistry && git maintenance run --task=commit-graph --task=prefetch --task=loose-objects --task=incremental-repack --task=pack-refs
