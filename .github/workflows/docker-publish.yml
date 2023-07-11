@@ -39,5 +39,5 @@ jobs:
           dockerfile: '${{ matrix.channel }}.Dockerfile'
           tags: ${{ matrix.channel }}
           buildoptions: "--compress"
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           snapshot: true
