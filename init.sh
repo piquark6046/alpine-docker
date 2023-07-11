@@ -19,10 +19,8 @@ yes | unminimize
 # NodeJS
 curl --tlsv1.3 -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs
 sudo apt install gcc g++ make
-curl --tlsv1.3 -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update && sudo apt install yarn
 npm update -g npm
+npm i -g yarn
 
 # Dotnet
 wget -qO https://dot.net/v1/dotnet-install.sh | bash
