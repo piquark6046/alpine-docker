@@ -17,7 +17,7 @@ done
 yes | unminimize
 
 # NodeJS
-curl --tlsv1.3 -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs
 sudo apt install gcc g++ make
 npm update -g npm
 npm i -g yarn
