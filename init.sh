@@ -18,6 +18,7 @@ AptPackagesNonRecommeded=("autoconf" "automake" "bzip2" "dpkg-dev" "file" "g++" 
 for i in "${AptPackagesNonRecommeded[@]}"
 do
   apt install -y "$i"
+done
 
 rm -rf /var/lib/apt/lists/*
 
