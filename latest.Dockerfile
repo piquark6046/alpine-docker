@@ -2,8 +2,6 @@ FROM alpine:latest
 
 USER root
 
-RUN mkdir /root
-
 # Install packages with root
 WORKDIR /
 COPY init.sh /root/init.sh
