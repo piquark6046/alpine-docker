@@ -21,4 +21,6 @@ COPY init_container.sh /home/container/root/init_container.sh
 RUN chown container /home/container/root/init_container.sh
 USER container
 RUN chmod +x /home/container/root/init_container.sh && bash /home/container/root/init_container.sh
+USER root
 RUN rm /home/container/root/init_container.sh
+USER container
