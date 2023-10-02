@@ -12,7 +12,7 @@ RUN rm /root/init.sh
 # Create account and switch
 RUN adduser -s /bin/bash --disabled-password --gecos '' -h /home/container container
 RUN adduser container wheel
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN echo 'container ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER container
 
 # Install packages with rootless
