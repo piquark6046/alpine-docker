@@ -22,36 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        channel: ["lts", "latest"]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@v5
-        with:
-          name: ${{ github.repository }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ${{ env.REGISTRY }}
-          dockerfile: '${{ matrix.channel }}.Dockerfile'
-          tags: ${{ matrix.channel }}
-          buildoptions: "--compress"
-          platforms: linux/amd64,linux/arm64
-          snapshot: true
-  build2:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-
-    strategy:
-      matrix:
-        channel: ["filtersregistry"]
+        channel: ["latest"]
 
     steps:
       - name: Checkout
@@ -70,4 +41,3 @@ jobs:
           buildoptions: "--compress"
           platforms: linux/amd64
           snapshot: true
-
