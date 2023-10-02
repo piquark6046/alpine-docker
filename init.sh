@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # packages lists
-ApkPackages=("wget" "git" "nano" "curl" "tar" "jq" "grep" "vim" "sudo" "bash-completion" "7zip" "uname" "ca-certificates" "gnupg" "nodejs" "npm")
+ApkPackages=("wget" "git" "nano" "curl" "tar" "jq" "grep" "vim" "sudo" "bash-completion" "7zip" "uname" "ca-certificates" "gnupg" "nodejs" "npm" "ruby" "gcompat" "flatpak")
 
 # Install app packages
 apk update
@@ -18,7 +18,7 @@ rm -rf /var/cache/apk/*
 wget -qO https://dot.net/v1/dotnet-install.sh | sh
 
 # npm packages
-NpmPackages=("ts-node" "tslib" "typescript")
+NpmPackages=("ts-node" "tslib" "typescript" "n")
 
 for i in "${NpmPackages[@]}"
 do
