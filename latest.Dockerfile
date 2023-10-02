@@ -24,3 +24,5 @@ RUN chmod +x /home/container/root/init_container.sh && bash /home/container/root
 USER root
 RUN rm /home/container/root/init_container.sh
 USER container
+
+ENTRYPOINT /bin/bash
