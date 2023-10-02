@@ -10,8 +10,8 @@ RUN chmod +x /root/init.sh && bash /root/init.sh
 RUN rm /root/init.sh
 
 # Create account and switch
-RUN adduser --disabled-password --gecos '' -h /home/container container
-RUN adduser container sudo
+RUN adduser -s /bin/bash --disabled-password --gecos '' -h /home/container container
+RUN adduser container wheel
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER container
 
