@@ -1,11 +1,12 @@
 FROM alpine:latest
 
 USER root
+RUN apk add bash
 
 # Install packages with root
 WORKDIR /
 COPY init.sh /root/init.sh
-RUN chmod +x /root/init.sh && sh /root/init.sh
+RUN chmod +x /root/init.sh && bash /root/init.sh
 RUN rm /root/init.sh
 
 # Create account and switch
@@ -19,5 +20,5 @@ USER root
 COPY init_container.sh /home/container/root/init_container.sh
 RUN chown container /home/container/root/init_container.sh
 USER container
-RUN chmod +x /home/container/root/init_container.sh && sh /home/container/root/init_container.sh
+RUN chmod +x /home/container/root/init_container.sh && bash /home/container/root/init_container.sh
 RUN rm /home/container/root/init_container.sh
