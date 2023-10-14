@@ -22,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        channel: ["latest", "lts"]
+        channel: ["lts"]
 
     steps:
       - name: Checkout
