@@ -4,9 +4,8 @@ FROM ubuntu:${UBUNTU_VERSION}
 USER root
 
 RUN apt update && apt upgrade -y && apt install -y sudo adduser
-# Create account and switch
-RUN adduser --disabled-password --gecos '' -u 1000 container
-RUN adduser container sudo
+# Set rootless
+RUN adduser ubuntu sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER root
 
@@ -19,7 +18,7 @@ RUN rm /init.sh
 # Install packages with rootless
 USER root
 COPY init_container.sh /home/container/init_container.sh
-RUN chown container /home/container/init_container.sh
-USER container
+RUN chown ubuntu /home/container/init_container.sh
+USER ubuntu
 RUN chmod +x /home/container/init_container.sh && bash /home/container/init_container.sh
 RUN rm /home/container/init_container.sh
