@@ -17,8 +17,13 @@ RUN rm /init.sh
 
 # Install packages with rootless
 USER root
-COPY init_container.sh /home/container/init_container.sh
-RUN chown ubuntu /home/container/init_container.sh
+COPY init_container.sh /home/ubuntu/init_container.sh
+RUN chown ubuntu /home/ubuntu/init_container.sh
 USER ubuntu
-RUN chmod +x /home/container/init_container.sh && bash /home/container/init_container.sh
-RUN rm /home/container/init_container.sh
+RUN chmod +x /home/ubuntu/init_container.sh && bash /home/ubuntu/init_container.sh
+RUN rm /home/ubuntu/init_container.sh
+
+# Docker rootless
+RUN dockerd-rootless-setuptool.sh install
+RUN echo 'export PATH=/usr/bin:$PATH' > /home/ubuntu/.bashrc
+RUN echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' > /home/ubuntu/.bashrc

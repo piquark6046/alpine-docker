@@ -23,3 +23,8 @@ RUN chown container /home/container/init_container.sh
 USER container
 RUN chmod +x /home/container/init_container.sh && bash /home/container/init_container.sh
 RUN rm /home/container/init_container.sh
+
+# Docker rootless
+RUN dockerd-rootless-setuptool.sh install
+RUN echo 'export PATH=/usr/bin:$PATH' > /home/container/.bashrc
+RUN echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' > /home/container/.bashrc
