@@ -3,17 +3,18 @@ FROM ubuntu:${UBUNTU_VERSION}
 
 USER root
 
+RUN apt update && apt upgrade -y && sudo apt install -y sudo
+# Create account and switch
+RUN adduser --disabled-password --gecos '' -u 1000 container
+RUN adduser container sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+USER root
+
 # Install packages with root
 WORKDIR /
 COPY init.sh /init.sh
 RUN chmod +x /init.sh && bash /init.sh
 RUN rm /init.sh
-
-# Create account and switch
-RUN adduser --disabled-password --gecos '' -u 1000 container
-RUN adduser container sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-USER container
 
 # Install packages with rootless
 USER root

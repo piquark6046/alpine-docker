@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # packages lists
-AptPackages=("wget" "man" "git" "nano" "curl" "tar" "jq" "grep" "vim" "sudo" "bash-completion" "7zip" "uname" "ca-certificates" "gnupg" "uidmap" "man" "mercurial" "subversion")
+AptPackages=("wget" "man" "git" "nano" "curl" "tar" "jq" "grep" "vim" "bash-completion" "7zip" "uname" "ca-certificates" "gnupg" "uidmap" "man" "mercurial" "subversion")
 
 # Install APT packages
 apt update
