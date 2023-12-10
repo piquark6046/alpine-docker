@@ -3,7 +3,7 @@ FROM ubuntu:${UBUNTU_VERSION}
 
 USER root
 
-RUN apt update && apt upgrade -y && apt install -y sudo
+RUN apt update && apt upgrade -y && apt install -y sudo adduser
 # Create account and switch
 RUN adduser --disabled-password --gecos '' -u 1000 container
 RUN adduser container sudo
